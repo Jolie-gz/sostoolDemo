@@ -1,0 +1,48 @@
+server:
+  port: 9595
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+
+primary:
+  datasource:
+    druid:
+      filters: stat
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://90.0.*.*:****/myseq?useUnicode=true&characterEncoding=utf-8
+      username: ******
+      password: ******
+      initialSize: 1
+      minIdle: 1
+      maxActive: 20
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 'x'
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: false
+      maxPoolPreparedStatementPerConnectionSize: 20
+
+back:
+  datasource:
+    druid:
+      filters: stat
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://90.0.*.*:****/myseq1?useUnicode=true&characterEncoding=utf-8
+      username: ******
+      password: ******
+      initialSize: 1
+      minIdle: 1
+      maxActive: 20
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 'x'
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: false
+      maxPoolPreparedStatementPerConnectionSize: 20
